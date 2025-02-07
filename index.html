@@ -1,180 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Raunak Raj | Python Developer</title>
-    <!-- <link rel="stylesheet" href="styles.css" /> -->
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-      /* Global Styling */
-      body {
-        font-family: "Arial", sans-serif;
-        background-color: #091723;
-        color: #333;
-        margin: 0;
-        padding: 0;
-      }
+        header {
+            background-color: #091723;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            border: #091723;
+            text-align: left;
+            place-items: center;
+        
+        }
 
-      /* Header Info */
-      header {
-        background-color: black
-      }
-      .header-info {
-        align-items: center;
-        text-align: center;
-        font-family: "Arial";
-        color: aliceblue;
-        padding: 20px;
-      }
+        img {
+            border-radius: 50%;
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+        }
 
-      .header-info h1 {
-        margin: 0;
-      }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #091723;
+            color: aliceblue;
+            margin: 0;
+            padding: 0;
+        }
 
-      .header-info p {
-        margin: 5px 0;
-      }
-
-      .header-info span {
-        margin: 0 10px;
-      }
-
-      /* Container Styling */
-      .container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-        padding: 20px;
-      }
-
-      /* Left Side - Information Section */
-      .left-side {
-        flex: 1;
-        padding: 20px;
-        color: aliceblue;
-      }
-
-      .left-side h1 {
-        color: #007bff;
-      }
-
-      .left-side .section-title {
-        margin-top: 20px;
-        font-size: 1.5em;
-        color: #007bff;
-      }
-
-      .left-side ul {
-        list-style-type: none;
-        padding: 0;
-      }
-
-      .left-side li {
-        padding: 5px 0;
-      }
-
-      /* Right Side - Profile Picture */
-      .right-side {
-        flex: 1;
-        text-align: center;
-      }
-
-      .profile-img {
-        border-radius: 50%;
-        width: 400px;
-        height: 400px;
-        object-fit: cover;
-      }
-
-      footer  {
-        align-items: center;
-        text-align: center;
-        color: #007bff;
-        background-color:black;
-        padding: 20px;
-      }
-
-      button {
-       background-color: aquamarine; 
-      }
-
-    
+        hr {
+            border-style: none;
+            border-top-style: dotted;
+            border-color: #007BFF;
+            border-width: 10px;
+            width: 7%;
+        }
     </style>
-  </head>
-  <body>
+    <title> Profile </title>
+</head>
+<body>
     <header>
-      <div class="header-info">
-        <h1>Raunak Raj</h1>
-        <p>
-          Email: raunak@gmail.com
-          <span>|</span>
-          Phone: (+91) 1234567890
-          <span>|</span>
-          Location: Patna, India
-        </p>
-      </div>
+        <table>
+            <tr>
+                <td><img src=".\image\IMG_20210206_174232.jpg" alt="Raunak profile picture" height="250"></td>
+                <td>
+                    <h1>Raunak Raj</h1>
+                    <h2>Python Developer</h2>
+                    <p>
+                        raunakraj5025@gmail.com <br>
+                        (+91) 1234567890 <br>
+                        Patna, Bihar <br>
+                        India - 800020
+                    </p>
+                </td>
+            </tr>
+        </table>
     </header>
 
-    <div class="container">
-      <!-- Left Side: Information Section -->
-      <div class="left-side">
-        <h1>My Profile</h1>
+    <main>
+        <hr>
+        <div class="left-side" style="flex: align; text-align: left;
+        justify-content: center; padding: 20px;">
+            <h1 style="color: #007BFF;">My Profile</h1>
 
-        <div class="section-title">About Me</div>
-        <p>
-          Hello! I am a second-year Computer Science student at IIT Patna. I am
-          passionate about web development and machine learning and I have a
-          strong foundation in programming and technology, I enjoy building
-          software solutions and learning new concepts related to computer
-          science. I am eager to gain real-world experience in web development,
-          machine learning, and software engineering.
-        </p>
+            <div class="section-title" style="margin-top: 20px; font-size: 1.5em; color: #007BFF;">About Me</div>
+            <p style="color: aliceblue;">Hello! I am a second-year Computer Science student at IIT Patna. I am passionate about web development and machine learning and I have a strong foundation in programming and technology, I enjoy building software solutions and learning new concepts related to computer science. I am eager to gain real-world experience in web development, machine learning, and software engineering.</p>
 
-        <div class="section-title">Education</div>
-        <ul>
-          <li>
-            <strong>Degree:</strong> Bachelor of Science in Computer Science and
-            Data Analytics
-          </li>
-          <li><strong>University:</strong> IIT Patna</li>
-          <li><strong>Graduation Year:</strong> 2026</li>
-        </ul>
+<hr>
+            <div class="section-title" style="margin-top: 20px; font-size: 1.5em; color: #007BFF;">Education</div>
+            <ul style="list-style-type: none; padding: 0; color: aliceblue;">
+                <li style="padding: 5px 0;"><strong>Degree:</strong> Bachelor of Science in Computer Science and Data Analytics</li>
+                <li style="padding: 5px 0;"><strong>University:</strong> IIT Patna</li>
+                <li style="padding: 5px 0;"><strong>Graduation Year:</strong> 2026</li>
+            </ul>
+<hr>
+            <div class="section-title" style="margin-top: 20px; font-size: 1.5em; color: #007BFF;">Skills</div>
+            <ul style="list-style-type: none; padding: 0; color: aliceblue;">
+                <li style="padding: 5px 0;">Programming Languages: Python, HTML, CSS, JavaScript</li>
+                <li style="padding: 5px 0;">Web Development: HTML, CSS, JavaScript</li>
+                <li style="padding: 5px 0;">Database Management: MySQL, MongoDB</li>
+                <li style="padding: 5px 0;">Version Control: Git, GitHub</li>
+            </ul>
+<hr>
+            <div class="section-title" style="margin-top: 20px; font-size: 1.5em; color: #007BFF;">Experience</div>
+            <ul style="list-style-type: none; padding: 0; color: aliceblue;">
+                <li style="padding: 5px 0;"><strong>Project Work:</strong> Developed a web application for My Project with main focus on Weather Analysis and Forecasting with Python and Machine Learning.</li>
+            </ul>
+        </div>   
+    </main>
 
-        <div class="section-title">Skills</div>
-        <ul>
-          <li>Programming Languages: Python, HTML, CSS, JavaScript</li>
-          <li>Web Development: HTML, CSS, JavaScript</li>
-          <li>Database Management: MySQL, MongoDB</li>
-          <li>Version Control: Git, GitHub</li>
-        </ul>
-
-        <div class="section-title">Experience</div>
-        <ul>
-          <li>
-            <strong>Project Work:</strong> Developed a web application for My
-            Project with main focus on Weather Analysis and Forecasting with
-            Python and Machine Learning.
-          </li>
-        </ul>
-      </div>
-
-      <!-- Right Side: Profile Picture -->
-      <div class="right-side">
-        <img
-          src="./image/IMG_20210206_174232.jpg"
-          alt="Profile Picture"
-          class="profile-img"
-        />
-      </div>
-    </div>
-
-    <footer>
-      <H2>Get in Touch</H2>
-      <h3>I hope you too love programming as much as I do.</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, quia?</p>
-      <button>CONTACT ME</button>
-    </footer>
-  </body>
+</body>
 </html>
