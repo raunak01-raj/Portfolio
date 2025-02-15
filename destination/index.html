@@ -6,28 +6,31 @@
     <title>My Dream Travel Destination</title>
 
     <style>
-          * {
+      * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
 
       body {
-        font-family: 'Arial', sans-serif;
+        font-family: "Arial", sans-serif;
         line-height: 1.6;
-        background-color: #FFF2F2;
+        background-color: #fff2f2;
         color: #333;
-        padding: 20px;
+        padding: 0px;
       }
 
       /* Header Section */
       .header {
-        background-color: #2D336B;
-        color: white;
+        background-color: white;
+        color: #2d336b;
         padding: 20px;
         text-align: center;
-        margin-bottom: 20px;
-        border-radius: 8px;
+        margin: 20px;
+        border-radius: 10px;
+        border: #7886c7;
+        border-width: 5px;
+        border-style: solid;
       }
 
       .header h1 {
@@ -36,31 +39,89 @@
         letter-spacing: 2px;
       }
 
+      /* Navbar styling */
+      .navbar {
+        background-color: #2d336b;
+        overflow: hidden;
+      }
+
+      .navbar a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+      }
+
+      .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      .navbar a.active {
+        background-color: #a9b5df;
+        color: white;
+      }
+
+      .navbar a.visited {
+        background-color: #a9b5df;
+        color: white;
+      }
+
+      .navbar a.link {
+        background-color: #a9b5df;
+        color: white;
+      }
+
+      /* Responsive layout for smaller screens */
+      @media screen and (max-width: 600px) {
+        .navbar a {
+          float: none;
+          display: block;
+          text-align: left;
+        }
+      }
+
+      
+      article > p {
+        background-color: white;
+      }
+
+      article + p {
+        background-color: white;
+      }
+
+      article ~ p {
+        background-color: white;
+      }
+
       /* Paragraph Section */
       .description {
         font-size: 18px;
         color: #555;
         text-align: justify;
         line-height: 1.8;
-        margin-bottom: 20px;
+        margin: 20px;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
       }
 
       /* Table Section */
-      table {
+      table.attractions {
         width: 100%;
-        margin-bottom: 20px;
+        margin: 20px;
         border-collapse: collapse;
       }
 
-      th, td {
+      th,
+      td {
         padding: 10px;
         text-align: left;
         border: 1px solid #ddd;
       }
 
       th {
-        background-color: #7886C7;
+        background-color: #7886c7;
         color: white;
       }
 
@@ -72,16 +133,36 @@
         background-color: #ddd;
       }
 
-      ul, ol {
-        margin-bottom: 20px;
-        border: #A9B5DF;
+      /* Aside Section */
+      aside {
+        background-color: #a9b5df;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 10px;
+        border-width: 5px;
+        float: right;
+        margin-top: 0px;
+        width: 30%;
+      }
+
+      aside > h2 {
+        color: #2d336b;
+        font-size: 24px;
+        margin-bottom: 10px;
+        text-decoration: underline;
+      }
+
+      ul,
+      ol {
+        margin: 20px;
+        border: #a9b5df;
         border-width: 10px;
         border-style: solid;
         border-radius: 20px;
-        background-color: #A9B5DF;
+        background-color: #a9b5df;
+        padding: 20px 20px 20px 40px;
 
-      /* Bullet Point Section */
-      
+        /* Bullet Point Section */
       }
 
       ul.things-to-do {
@@ -89,13 +170,12 @@
         padding-left: 20px;
         margin-bottom: 20px;
         margin-left: 20px;
-        
       }
 
       ul.things-to-do li {
         font-size: 18px;
         margin-bottom: 10px;
-        color: #2D336B;
+        color: #2d336b;
         padding-left: 10px;
       }
 
@@ -103,109 +183,297 @@
       ol.top-attractions {
         list-style-type: decimal;
         padding-left: 20px;
-        margin-left: 20px;
-
+        margin: 20px;
       }
 
       ol.top-attractions li {
         font-size: 18px;
         margin-bottom: 10px;
-        color: #2D336B;
+        color: #2d336b;
         padding-left: 10px;
+      }
+
+      a {
+        color: #2d336b;
+        text-decoration: none;
+        margin: 20px;
+      }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a:visited {
+            color: #2d336b;
+        }
+
+      /* Footer Styling */
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        width: 100%;
+        bottom: 0;
+        margin: 0%;
+      }
+
+      footer p {
+        margin: 5px 0;
+      }
+
+      footer a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
       }
     </style>
   </head>
   <body>
     <!-- Header Section -->
-    <div class="header">
+    <header class="header">
       <h1>Discover the Wonders of Kyoto, Japan</h1>
-    </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
     <!-- Paragraph Section -->
-    <p class="description">
-      Kyoto, once the capital of Japan, is a city steeped in rich history, culture, and natural beauty. Nestled between mountains, it is home to countless temples, shrines, and traditional wooden houses that transport visitors back in time. Known for its stunning gardens, serene tea ceremonies, and vibrant festivals, Kyoto offers a perfect blend of old-world charm and cultural significance. The city is especially famous for its beautiful seasons—cherry blossoms in spring, lush greenery in summer, colorful foliage in autumn, and peaceful, snowy landscapes in winter. Whether strolling through bamboo groves, visiting historic temples like Kinkaku-ji, or experiencing traditional geisha culture, Kyoto remains a timeless destination that captures the heart of Japan.
-    </p>
+    <section>
+      <aside>
+        <h2>Fun Fact</h2>
+        <p>
+          It is home to over 1,600 temples and shrines! The city is known for
+          its rich history and was the capital of Japan for over a thousand
+          years, from 794 to 1868. Many of these temples, like Kinkaku-ji (the
+          Golden Pavilion) and Fushimi Inari-taisha, are not only significant
+          cultural landmarks but also UNESCO World Heritage sites. Kyoto is
+          often considered the cultural heart of Japan because of its deep
+          connection to traditional Japanese arts, tea ceremonies, and historic
+          architecture.
+        </p>
+      </aside>
+
+      <article class="description">
+        <p>
+          Kyoto, once the capital of Japan, is a city steeped in rich history,
+          culture, and natural beauty. Nestled between mountains, it is home to
+          countless temples, shrines, and traditional wooden houses that
+          transport visitors back in time. Known for its stunning gardens,
+          serene tea ceremonies, and vibrant festivals, Kyoto offers a perfect
+          blend of old-world charm and cultural significance. The city is
+          especially famous for its beautiful seasons—cherry blossoms in spring,
+          lush greenery in summer, colorful foliage in autumn, and peaceful,
+          snowy landscapes in winter. Whether strolling through bamboo groves,
+          visiting historic temples like Kinkaku-ji, or experiencing traditional
+          geisha culture, Kyoto remains a timeless destination that captures the
+          heart of Japan.
+        </p>
+        <p>
+          Kyoto is also famous for its traditional geisha culture, preserved in
+          the Gion district, where you can spot geishas in their beautiful
+          attire, visit teahouses, and experience the art of the geisha
+          performance. The city is a blend of old and new, with modern shopping
+          districts, vibrant festivals, and a thriving culinary scene that
+          includes traditional kaiseki cuisine and matcha-based sweets.
+        </p>
+        <section>
+            <p>
+            Kyoto, once the capital of Japan, is a city steeped in rich history,
+            culture, and natural beauty. Nestled between mountains, it is home to
+            countless temples, shrines, and traditional wooden houses that
+            transport visitors back in time.
+            </p>
+        </section>
+      </article>
+
+      <p class="description">
+        Kyoto, once the capital of Japan, is a city steeped in rich history,
+        culture, and natural beauty. Nestled between mountains, it is home to
+        countless temples, shrines, and traditional wooden houses that
+        transport visitors back in time.
+      </p>
+    </section>
 
     <!-- Table Section -->
-    <table>
-      <thead>
-        <tr>
-          <th>Attraction</th>
-          <th>Best Time to Visit</th>
-          <th>Famous For</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Kinkaku-ji</td>
-          <td>Spring & Autumn</td>
-          <td>
-            Kinkaku-ji, or the Golden Pavilion, is famous for its striking
-            appearance, with its top two floors covered in gold leaf, creating a
-            stunning reflection in the surrounding pond.Originally built as a
-            retirement villa for the shogun Ashikaga Yoshimitsu in the 14th
-            century, it was later converted into a Zen Buddhist temple.
-          </td>
-        </tr>
-        <tr>
-          <td>Fushimi Inari Taisha</td>
-          <td>Year-round</td>
-          <td>
-            Fushimi Inari Taisha is famous for its thousands of vibrant red
-            torii gates that form long, winding paths up Mount Inari. Dedicated
-            to Inari, the Shinto god of rice, agriculture, and prosperity, the
-            shrine is one of Japan’s most important and visually striking
-            religious sites.
-          </td>
-        </tr>
-        <tr>
-          <td>Arashiyama Bamboo Grove</td>
-          <td>Summer & Autumn</td>
-          <td>
-            Arashiyama Bamboo Grove is famous for its enchanting and serene
-            forest of towering bamboo stalks that create a mesmerizing,
-            otherworldly atmosphere. Located in the Arashiyama district of
-            Kyoto, the grove offers visitors a unique experience, walking
-            through paths lined with dense bamboo, which sway gently in the
-            breeze.
-          </td>
-        </tr>
-        <tr>
-          <td>Kiyomizu-dera</td>
-          <td>Spring & Autumn</td>
-          <td>
-            Kiyomizu-dera is famous for its stunning wooden stage that juts out
-            over the hillside, offering breathtaking views of Kyoto, especially
-            during the cherry blossom season and autumn when the surrounding
-            trees are in full color. This UNESCO World Heritage Site, founded in
-            the 8th century, is dedicated to the Buddhist deity Kannon.
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <section>
+      <table class="attractions">
+        <thead>
+          <tr>
+            <th>Attraction</th>
+            <th>Best Time to Visit</th>
+            <th>Famous For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Kinkaku-ji</td>
+            <td>Spring & Autumn</td>
+            <td>
+              Kinkaku-ji, or the Golden Pavilion, is famous for its striking
+              appearance, with its top two floors covered in gold leaf, creating
+              a stunning reflection in the surrounding pond.Originally built as
+              a retirement villa for the shogun Ashikaga Yoshimitsu in the 14th
+              century, it was later converted into a Zen Buddhist temple.
+            </td>
+          </tr>
+          <tr>
+            <td>Fushimi Inari Taisha</td>
+            <td>Year-round</td>
+            <td>
+              Fushimi Inari Taisha is famous for its thousands of vibrant red
+              torii gates that form long, winding paths up Mount Inari.
+              Dedicated to Inari, the Shinto god of rice, agriculture, and
+              prosperity, the shrine is one of Japan’s most important and
+              visually striking religious sites.
+            </td>
+          </tr>
+          <tr>
+            <td>Arashiyama Bamboo Grove</td>
+            <td>Summer & Autumn</td>
+            <td>
+              Arashiyama Bamboo Grove is famous for its enchanting and serene
+              forest of towering bamboo stalks that create a mesmerizing,
+              otherworldly atmosphere. Located in the Arashiyama district of
+              Kyoto, the grove offers visitors a unique experience, walking
+              through paths lined with dense bamboo, which sway gently in the
+              breeze.
+            </td>
+          </tr>
+          <tr>
+            <td>Kiyomizu-dera</td>
+            <td>Spring & Autumn</td>
+            <td>
+              Kiyomizu-dera is famous for its stunning wooden stage that juts
+              out over the hillside, offering breathtaking views of Kyoto,
+              especially during the cherry blossom season and autumn when the
+              surrounding trees are in full color. This UNESCO World Heritage
+              Site, founded in the 8th century, is dedicated to the Buddhist
+              deity Kannon.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
     <!-- Bullet Point Section -->
-    <h2>Things To Do</h2>
-    <ul class="things-to-do">
-      <li> <strong>Visit Historic Temples and Shrines: </strong>Explore famous sites like Kinkaku-ji (Golden Pavilion), Fushimi Inari Taisha with its thousands of torii gates, and Kiyomizu-dera with its stunning views and wooden stage. </li>
-      <li><strong> Stroll Through the Arashiyama Bamboo Grove: </strong>Walk through the peaceful, towering bamboo forest in the Arashiyama district, one of Kyoto's most iconic natural attractions.</li>
-      <li><strong>Experience Traditional Tea Ceremonies: </strong>Kyoto is known for its tea culture. Participate in a traditional Japanese tea ceremony to immerse yourself in the art of tea-making.</li>
-      <li><strong>Explore the Philosopher's Path: </strong>Take a leisurely walk along this scenic canal-side path, especially beautiful during cherry blossom season.</li>
-      <li><strong>Visit Gion District: </strong>Discover Kyoto’s famous geisha district, where you can enjoy traditional tea houses, watch a geisha performance, or spot geishas in their beautiful attire.</li>
-      <li><strong>Shop at Nishiki Market: </strong>Known as Kyoto’s "kitchen," Nishiki Market is a bustling shopping street where you can sample local delicacies like pickles, sweets, and fresh seafood.</li>
-      <li><strong>Relax in Kyoto’s Zen Gardens: </strong>Visit beautiful Zen gardens like those at Ryoan-ji or Nanzen-ji, where you can enjoy the calming effect of carefully arranged rocks, sand, and plants.</li>
-      <li><strong>See the Cherry Blossoms and Autumn Leaves: </strong>Kyoto is famous for its seasonal beauty. Visit parks and temples during spring for cherry blossoms or in autumn for vibrant fall foliage.</li>
-      <li><strong>Try Kyoto’s Traditional Cuisine: </strong>Don't miss local specialties like kaiseki (multi-course meal), yudofu (tofu hot pot), and matcha-based desserts.</li>
-      <li><strong>Take a Boat Ride on the Hozu River: </strong>Enjoy a scenic boat ride down the Hozu River in Arashiyama, offering views of mountains, forests, and temples along the way.</li>
-    </ul>
+    <section>
+      <h2>Things To Do</h2>
+      <ul class="things-to-do">
+        <li>
+          <strong>Visit Historic Temples and Shrines: </strong>Explore famous
+          sites like Kinkaku-ji (Golden Pavilion), Fushimi Inari Taisha with its
+          thousands of torii gates, and Kiyomizu-dera with its stunning views
+          and wooden stage.
+        </li>
+        <li>
+          <strong> Stroll Through the Arashiyama Bamboo Grove: </strong>Walk
+          through the peaceful, towering bamboo forest in the Arashiyama
+          district, one of Kyoto's most iconic natural attractions.
+        </li>
+        <li>
+          <strong>Experience Traditional Tea Ceremonies: </strong>Kyoto is known
+          for its tea culture. Participate in a traditional Japanese tea
+          ceremony to immerse yourself in the art of tea-making.
+        </li>
+        <li>
+          <strong>Explore the Philosopher's Path: </strong>Take a leisurely walk
+          along this scenic canal-side path, especially beautiful during cherry
+          blossom season.
+        </li>
+        <li>
+          <strong>Visit Gion District: </strong>Discover Kyoto’s famous geisha
+          district, where you can enjoy traditional tea houses, watch a geisha
+          performance, or spot geishas in their beautiful attire.
+        </li>
+        <li>
+          <strong>Shop at Nishiki Market: </strong>Known as Kyoto’s "kitchen,"
+          Nishiki Market is a bustling shopping street where you can sample
+          local delicacies like pickles, sweets, and fresh seafood.
+        </li>
+        <li>
+          <strong>Relax in Kyoto’s Zen Gardens: </strong>Visit beautiful Zen
+          gardens like those at Ryoan-ji or Nanzen-ji, where you can enjoy the
+          calming effect of carefully arranged rocks, sand, and plants.
+        </li>
+        <li>
+          <strong>See the Cherry Blossoms and Autumn Leaves: </strong>Kyoto is
+          famous for its seasonal beauty. Visit parks and temples during spring
+          for cherry blossoms or in autumn for vibrant fall foliage.
+        </li>
+        <li>
+          <strong>Try Kyoto’s Traditional Cuisine: </strong>Don't miss local
+          specialties like kaiseki (multi-course meal), yudofu (tofu hot pot),
+          and matcha-based desserts.
+        </li>
+        <li>
+          <strong>Take a Boat Ride on the Hozu River: </strong>Enjoy a scenic
+          boat ride down the Hozu River in Arashiyama, offering views of
+          mountains, forests, and temples along the way.
+        </li>
+      </ul>
+    </section>
 
     <!-- Ordered List Section -->
-    <h2>Top Attractions</h2>
-    <ol class="top-attractions">
-      <li><strong>Fushimi Inari Taisha: </strong>Fushimi Inari Taisha is one of Kyoto’s most iconic and spiritually significant landmarks, known for its breathtaking path lined with thousands of vermilion torii gates. Dedicated to Inari, the Shinto god of rice, agriculture, and prosperity, this shrine offers visitors a unique and otherworldly experience as they walk through the Senbon Torii (thousands of torii gates), which wind up the slopes of Mount Inari</li>
-      <li><strong>Kinkaku-ji (Golden Pavilion): </strong>Kinkaku-ji, also known as the Golden Pavilion, is one of Kyoto’s most renowned and visually striking landmarks. This Zen Buddhist temple, originally built as a retirement villa for the shogun Ashikaga Yoshimitsu in the 14th century, is famous for its top two floors, which are covered in shimmering gold leaf, making it a stunning sight against the backdrop of its surrounding tranquil pond and lush gardens. The reflection of the golden temple on the water adds to its serene beauty, creating a picturesque and almost otherworldly scene, especially during the changing seasons.</li>
-      <li><strong>Arashiyama Bamboo Grove: </strong>The Arashiyama Bamboo Grove is one of Kyoto's most enchanting natural wonders, offering a mesmerizing experience as visitors walk through towering bamboo stalks that create a serene, almost magical atmosphere. Located in the Arashiyama district, the grove is a tranquil escape from the bustling city, with sunlight filtering through the bamboo, casting a soft glow on the forest floor.</li>
-      <li><strong>Kiyomizu-dera: </strong>Kiyomizu-dera is one of Kyoto’s most celebrated temples, renowned for its stunning architecture and breathtaking views. Founded in the late 8th century, this UNESCO World Heritage Site is best known for its large wooden stage, which juts out over the hillside, offering panoramic views of the city and surrounding landscapes, especially during the cherry blossom and autumn foliage seasons.</li>
-    </ol>
+    <section>
+      <h2>Top Attractions</h2>
+      <ol class="top-attractions">
+        <li>
+          <strong>Fushimi Inari Taisha: </strong>Fushimi Inari Taisha is one of
+          Kyoto’s most iconic and spiritually significant landmarks, known for
+          its breathtaking path lined with thousands of vermilion torii gates.
+          Dedicated to Inari, the Shinto god of rice, agriculture, and
+          prosperity, this shrine offers visitors a unique and otherworldly
+          experience as they walk through the Senbon Torii (thousands of torii
+          gates), which wind up the slopes of Mount Inari
+        </li>
+        <li>
+          <strong>Kinkaku-ji (Golden Pavilion): </strong>Kinkaku-ji, also known
+          as the Golden Pavilion, is one of Kyoto’s most renowned and visually
+          striking landmarks. This Zen Buddhist temple, originally built as a
+          retirement villa for the shogun Ashikaga Yoshimitsu in the 14th
+          century, is famous for its top two floors, which are covered in
+          shimmering gold leaf, making it a stunning sight against the backdrop
+          of its surrounding tranquil pond and lush gardens. The reflection of
+          the golden temple on the water adds to its serene beauty, creating a
+          picturesque and almost otherworldly scene, especially during the
+          changing seasons.
+        </li>
+        <li>
+          <strong>Arashiyama Bamboo Grove: </strong>The Arashiyama Bamboo Grove
+          is one of Kyoto's most enchanting natural wonders, offering a
+          mesmerizing experience as visitors walk through towering bamboo stalks
+          that create a serene, almost magical atmosphere. Located in the
+          Arashiyama district, the grove is a tranquil escape from the bustling
+          city, with sunlight filtering through the bamboo, casting a soft glow
+          on the forest floor.
+        </li>
+        <li>
+          <strong>Kiyomizu-dera: </strong>Kiyomizu-dera is one of Kyoto’s most
+          celebrated temples, renowned for its stunning architecture and
+          breathtaking views. Founded in the late 8th century, this UNESCO World
+          Heritage Site is best known for its large wooden stage, which juts out
+          over the hillside, offering panoramic views of the city and
+          surrounding landscapes, especially during the cherry blossom and
+          autumn foliage seasons.
+        </li>
+      </ol>
+    </section>
+
+    <a href="https://en.wikipedia.org/wiki/Kyoto" target="_blank">Read More</a>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 Raunak Raj. All Rights Reserved.</p>
+      <p>Thank you for visiting my website!</p>
+    </footer>
   </body>
 </html>
