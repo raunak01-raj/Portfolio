@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple To-Do List</title>
+</head>
+<body>
+    <h2>Simple To-Do List</h2>
+
+    <!-- Input field for the task -->
+    <input type="text" id="taskInput" placeholder="Enter a new task">
+    <button onclick="addTask()">Add Task</button>
+
+    <!-- Unordered list to display tasks -->
+    <ul id="taskList"></ul>
+
+    <script>
+        // Function to add a task to the list
+        function addTask() {
+            // Get the task input value
+            var taskInput = document.getElementById("taskInput").value;
+
+            // Only proceed if the input is not empty
+            if (taskInput.trim() !== "") {
+                // Create a new list item (li)
+                var li = document.createElement("li");
+                
+                // Add the task text to the list item
+                li.textContent = taskInput;
+
+                // Create a "Remove" button
+                var removeButton = document.createElement("button");
+                removeButton.textContent = "Remove";
+                removeButton.onclick = function() {
+                    // Remove the task when the button is clicked
+                    li.remove();
+                };
+
+                // Append the remove button to the list item
+                li.appendChild(removeButton);
+
+                // Append the new list item to the unordered list
+                document.getElementById("taskList").appendChild(li);
+
+                // Clear the input field
+                document.getElementById("taskInput").value = "";
+            } else {
+                alert("Please enter a task!");
+            }
+        }
+    </script>
+</body>
+</html>

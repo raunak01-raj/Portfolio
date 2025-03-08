@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <script>
+        // Ask the user to enter two numbers
+        var num1 = parseFloat(prompt("Enter the first number:"));
+        var num2 = parseFloat(prompt("Enter the second number:"));
+
+        // Perform calculations
+        var sum = num1 + num2;
+        var difference = num1 - num2;
+        var product = num1 * num2;
+        var quotient = num2 !== 0 ? num1 / num2 : "Cannot divide by zero";
+
+        // Display the results using alert()
+        alert("Addition: " + sum);
+        alert("Subtraction: " + difference);
+        alert("Multiplication: " + product);
+        alert("Division: " + quotient);
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Secret Number</title>
+</head>
+<body>
+    <h2>Guess the Secret Number</h2>
+
+    <!-- Displaying the result and number of attempts -->
+    <p id="message"></p>
+    <label for="guessInput">Enter your guess (1-10):</label>
+    <input type="number" id="guessInput" min="1" max="10">
+    <button onclick="checkGuess()">Guess</button>
+
+    <script>
+        // Generate a random number between 1 and 10
+        var secretNumber = Math.floor(Math.random() * 10) + 1;
+        var attempts = 0;
+        var maxAttempts = 3;
+
+        // Function to check the user's guess
+        function checkGuess() {
+            // Get the guess from the input field
+            var userGuess = parseInt(document.getElementById("guessInput").value);
+
+            // Increment the number of attempts
+            attempts++;
+
+            // Check if the guess is correct
+            if (userGuess === secretNumber) {
+                document.getElementById("message").innerText = "Congratulations! You guessed the number!";
+                document.getElementById("guessInput").disabled = true;  // Disable input after success
+            } else if (attempts < maxAttempts) {
+                // If the guess is incorrect and attempts are left
+                document.getElementById("message").innerText = "Wrong guess! Try again. You have " + (maxAttempts - attempts) + " attempts left.";
+            } else {
+                // If the user runs out of attempts
+                document.getElementById("message").innerText = "Game Over! The secret number was " + secretNumber + ".";
+                document.getElementById("guessInput").disabled = true;  // Disable input after game over
+            }
+        }
+    </script>
+</body>
+</html>
