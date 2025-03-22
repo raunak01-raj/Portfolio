@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Weather App</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #weather-form {
+            margin-bottom: 10px;
+        }
+
+        #weather-info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="weather-form">
+            <input type="text" id="city" placeholder="Enter city">
+            <button type="submit">Get Weather</button>
+        </form>
+        <div id="weather-info"></div>
+    </div>
+
+    <script>
+        document.getElementById('weather-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const city = document.getElementById('city').value;
+            getWeather(city);
+        });
+
+        function getWeather(city) {
+            const apiKey = 'ebc46a096ffb4f8284b11143565f7299'; // Replace with your API key
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    displayWeather(data);
+                })
+                .catch(error => {
+                    document.getElementById('weather-info').innerHTML = `<p>Error: ${error.message}</p>`;
+                });
+        }
+
+        function displayWeather(data) {
+            const weatherInfo = document.getElementById('weather-info');
+            if (data.cod === '404') {
+              weatherInfo.innerHTML = `<p>City not found.</p>`;
+              return;
+            }
+            const temperature = data.main.temp;
+            const description = data.weather[0].description;
+            const humidity = data.main.humidity;
+            const windSpeed = data.wind.speed;
+            const cityName = data.name;
+
+            weatherInfo.innerHTML = `
+                <h2>${cityName}</h2>
+                <p>Temperature: ${temperature} °C</p>
+                <p>Condition: ${description}</p>
+                <p>Humidity: ${humidity}%</p>
+                <p>Wind Speed: ${windSpeed} m/s</p>
+            `;
+        }
+    </script>
+</body>
+</html>

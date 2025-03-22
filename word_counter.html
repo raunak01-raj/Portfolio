@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word and Character Counter</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding-top: 50px;
+            background-color: #f3f4f6;
+        }
+        textarea {
+            width: 80%;
+            height: 150px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+        .counter {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .counter span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Word and Character Counter</h1>
+    <textarea id="textInput" placeholder="Start typing your paragraph here..."></textarea>
+    
+    <div class="counter">
+        <p>Word Count: <span id="wordCount">0</span></p>
+        <p>Character Count: <span id="charCount">0</span></p>
+    </div>
+
+    <script>
+        function updateCount() {
+            // Get the value of the textarea
+            const text = document.getElementById('textInput').value;
+
+            // Count words by splitting the string on spaces (excluding empty spaces)
+            const words = text.trim().split(/\s+/).filter(function(word) {
+                return word.length > 0;
+            });
+
+            // Count characters (excluding spaces)
+            const charCount = text.length;
+
+            // Update word and character counts in the DOM
+            document.getElementById('wordCount').textContent = words.length;
+            document.getElementById('charCount').textContent = charCount;
+        }
+
+        // Attach the event listener to update count on each input event
+        document.getElementById('textInput').addEventListener('input', updateCount);
+
+        // Initialize the counts when the page loads
+        updateCount();
+    </script>
+</body>
+</html>
