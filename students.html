@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Records</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      .highlight {
+        background-color: lightgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Student Records</h1>
+
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search by Name or Roll Number"
+    />
+
+    <table id="studentTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Roll Number</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script>
+      async function loadStudents() {
+        try {
+          const response = await fetch("students.json");
+          const students = await response.json();
+          return students;
+        } catch (error) {
+          console.error("Error loading students:", error);
+          return [];
+        }
+      }
+
+      async function displayStudents() {
+        const students = await loadStudents();
+        const tableBody = document.querySelector("#studentTable tbody");
+        tableBody.innerHTML = ""; // Clear previous table data
+
+        const searchInput = document.getElementById("searchInput");
+        const searchTerm = searchInput.value.toLowerCase();
+
+        students.forEach((student) => {
+          if (
+            student.name.toLowerCase().includes(searchTerm) ||
+            student.rollNumber.toString().includes(searchTerm)
+          ) {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+            <td>${student.name}</td>
+            <td>${student.rollNumber}</td>
+            <td>${student.grade}</td>
+          `;
+
+            if (student.grade > 90) {
+              row.classList.add("highlight");
+            }
+
+            tableBody.appendChild(row);
+          }
+        });
+      }
+
+      document
+        .getElementById("searchInput")
+        .addEventListener("input", displayStudents);
+
+      displayStudents(); // Initial display
+    </script>
+  </body>
+</html>

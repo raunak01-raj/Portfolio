@@ -1,0 +1,8 @@
+[
+  { "name": "Alice Smith", "rollNumber": 101, "grade": 95 },
+  { "name": "Bob Johnson", "rollNumber": 102, "grade": 88 },
+  { "name": "Charlie Brown", "rollNumber": 103, "grade": 92 },
+  { "name": "David Lee", "rollNumber": 104, "grade": 78 },
+  { "name": "Eve Wilson", "rollNumber": 105, "grade": 98 },
+  { "name": "Frank Miller", "rollNumber": 106, "grade": 85 }
+]
